@@ -11,11 +11,13 @@ let loginBtn = () => {
         login.style.border = "2px solid red"
         loginAlert.innerHTML = "Неверный логин!"
     }
-    if (password.value !== passwordCheck) {
+    else if (password.value !== passwordCheck) {
         password.style.border = "2px solid red"
         passwordAlert.innerHTML = "Неверный пароль!"
+        loginAlert.innerText = ""
+        login.style.border = ""
     }
     else {
-        location.href = "mainpage.html"
+        location.href = "index.html"
     }
 }

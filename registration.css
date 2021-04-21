@@ -11,7 +11,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 700px;
+    height: 800px;
 }
 
 .block{
@@ -38,21 +38,26 @@ body{
     margin-top: 0;
 }
 
+#loginInput{
+    margin-top: 20px;
+}
+
 input{
     font-family: "RussoOne";
     width: 417px;
     height: 46px;
     border-radius: 20px;
     text-align: center;
-    font-size: 24px;
-    margin: 0 0 30px 0;
+    font-size: 20px;
+    margin: 0 ;
     outline: none;
     border: none;
 }
 
 ::placeholder{
     color: #0A306A;
-    
+    opacity: 0.5;
+    font-size: 18px;
 }
 
 .passwords{
@@ -61,14 +66,30 @@ input{
 
 .psw{
     margin: 0 15px;
+    width: 250px;
 }
 
 #btn{
     width: 300px;
     height: 46px;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 0;
     font-family: "RussoOne";
-    font-size: 24px;
-    color: #0A306A;;
+    font-size: 18px;
+    color: #0A306A;
+    cursor: pointer;
+}
+
+.loginAlert{
+    color: white;
+    font-family: "RussoOne";
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.passwordAlert{
+    color: white;
+    font-family: "RussoOne";
+    font-size: 18px;
+    margin-bottom: 20px;
 }
