@@ -1,0 +1,21 @@
+let loginCheck = localStorage.getItem("login")
+let passwordCheck = localStorage.getItem("password")
+
+let login = document.getElementById("loginInput")
+let loginAlert = document.getElementById("loginAlert")
+let password = document.getElementById("passwordInput")
+let passwordAlert = document.getElementById("passwordAlert")
+
+let loginBtn = () => {
+    if (login.value !== loginCheck) {
+        login.style.border = "2px solid red"
+        loginAlert.innerHTML = "Неверный логин!"
+    }
+    if (password.value !== passwordCheck) {
+        password.style.border = "2px solid red"
+        passwordAlert.innerHTML = "Неверный пароль!"
+    }
+    else {
+        location.href = "mainpage.html"
+    }
+}

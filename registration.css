@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "RussoOne";
+    src: url(./glint/fonts/RussoOne/RussoOne-Regular.ttf);
+}
+
+body{
+    background-color: #9BC5D2;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+
+.block{
+    display: flex;
+    justify-content: center;
+}
+
+.regBlock{
+    width: 900px;
+    height: 450px;
+    border-radius: 40px;
+    background-color: #0A306A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    font-family: "RussoOne";
+    color: white;
+    margin-top: 0;
+}
+
+input{
+    font-family: "RussoOne";
+    width: 417px;
+    height: 46px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 0 30px 0;
+    outline: none;
+    border: none;
+}
+
+::placeholder{
+    color: #0A306A;
+    
+}
+
+.passwords{
+    display: inline-flex;
+}
+
+.psw{
+    margin: 0 15px;
+}
+
+#btn{
+    width: 300px;
+    height: 46px;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-family: "RussoOne";
+    font-size: 24px;
+    color: #0A306A;;
+}
