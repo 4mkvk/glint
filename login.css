@@ -79,3 +79,9 @@ input{
     font-size: 18px;
     margin-bottom: 20px;
 }
+
+a{
+    font-family: "RussoOne";
+    color: white;
+    margin-top: 20px;
+}
