@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/createtest.css">
+<link rel="stylesheet" href="css/header-footer.css">
+
+<body>
+  <div id="questions">
+    <input type="text" placeholder="Название вашего теста" id="title">
+    <hr>
+    <input type="text" placeholder="Краткое описание теста" id="description">
+    <hr>
+    <div style="display: flex; flex-direction: column; width:fit-content;">
+      <select name="" id="theme">
+        <option value="Политика">Политика</option>
+        <option value="История">История</option>
+        <option value="Другое">Другое</option>
+      </select>
+      <button id="startBtn">Приступить к созданию вопросов</button>
+    </div>
+  </div>
+  <div id="question">
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №1" id="question1text"></div>
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question1Variant1"> <input type="radio" checked name="correct1"
+          id="correct1" value="1">
+        <input type="text" placeholder="Вариант 2" id="question1Variant2"> <input type="radio" checked name="correct1"
+          id="correct1" value="2">
+      </div>
+    </div>
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №2" id="question2text"></div>
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question2Variant1"> <input type="radio" checked name="correct2"
+          id="correct2">
+        <input type="text" placeholder="Вариант 2" id="question2Variant2"> <input type="radio" checked name="correct2"
+          id="correct2">
+      </div>
+    </div>
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №3" id="question3text"></div>
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question3Variant1"> <input type="radio" checked name="correct3"
+          id="correct3">
+        <input type="text" placeholder="Вариант 2" id="question3Variant2"> <input type="radio" checked name="correct3"
+          id="correct3">
+      </div>
+    </div>
+
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №4" id="question4text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question4Variant1"> <input type="radio" checked name="correct4"
+          id="correct4">
+
+        <input type="text" placeholder="Вариант 2" id="question4Variant2"> <input type="radio" checked name="correct4"
+          id="correct4">
+      </div>
+    </div>
+
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №5" id="question5text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question5Variant1"> <input type="radio" checked name="correct5"
+          id="correct5">
+
+        <input type="text" placeholder="Вариант 2" id="question5Variant2"> <input type="radio" checked name="correct5"
+          id="correct5">
+      </div>
+    </div>
+
+
+    <a href="#" id="createTestBtn">Создать тест</a>
+  </div>
+
+
+
+
+
+
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
