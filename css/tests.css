@@ -260,10 +260,10 @@
     margin-top: 20px;
 }
 .testsBody{
-    width: 100%;
-    height: auto;
+    height: 100vh;
     background-color: #9BC5D2;
-    padding: 0 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 .testsFilterBlock{
     padding: 20px 0;
@@ -281,7 +281,7 @@
     outline: none;
 }
 
-.testsBlock{
+#testsBlock{
     width: 100%;
     height: auto;
     display: flex;
@@ -294,15 +294,87 @@
     height: 150px;
     width: 40%;
     border-radius: 20px;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 30px;
 }
 .testCard:hover{
     background: #0A306A;
     border: #0A306A 3px solid;
     transition: 0.3s;
 }
+.testCardImage{
+    height: 100%;
+}
 .testCardImageBlock{
     width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.testCardImageBlock{
+    width: 30%;
+}
+.testCardContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+}
+.testCardTitleBlock{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gilroy Bold';
+}
+.testCardTitle{
+    font-size: 24px;
+    color: white;
+}
+.testCardSpan{
+    font-family: 'Gilroy Bold';
+    font-size: 18px;
+    color: white;
+}
+.testCardTakeTest{
+    border: rgba(10, 48, 106, 0) 1px solid;
+    padding: 10px 20px;
+    border-radius: 10px; 
+    color: white;
+    background: #0A306A;
+    font-family: 'Gilroy Bold';
+    font-size: 16px;
+}
+.testCardTakeTest:hover{
+    cursor: pointer;
+}
+.testCard:hover .testCardTakeTest{
+    border: white 1px solid;
+}
+.testCardDownBlock{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.linkButton{
+    padding: 10px 20px;
+    background-color: black;
+    border-radius: 50px;
+    font-size: 18px;
+    border: 1px solid black;
+    color: white;
+    font-family: 'RussoOne Regular';
+    text-decoration: none;
+}
+.linkButton:hover{
+    background-color: #fff;
+    border-color: white;
+    color: black;
+    transition: all 1s linear 0.1ms;
+    box-shadow: 0px 1px 2px 3px rgba(0,0,0,0.5) ;
+}
+.testsFooter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

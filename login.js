@@ -1,5 +1,7 @@
 let loginCheck = localStorage.getItem("login")
 let passwordCheck = localStorage.getItem("password")
+let isLoged = false;
+localStorage.setItem('isLoged', isLoged)
 
 let login = document.getElementById("loginInput")
 let loginAlert = document.getElementById("loginAlert")
@@ -19,5 +21,8 @@ let loginBtn = () => {
     }
     else {
         location.href = "index.html"
+        let isLoged = true;
+        localStorage.setItem('isLoged', isLoged)
     }
 }
+

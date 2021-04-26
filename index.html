@@ -26,21 +26,17 @@
                 <a href="index.html" class="menuItem">Главная</a>
                 <a href="tests.html" class="menuItem">Все тесты</a>
                 <a href="" class="menuItem">Создать</a>
-                <a href="" class="menuItem">Профиль</a>
+                <a class="menuItem" onclick="Profile()">Профиль</a>
+                <a class="menuItem" id="ExitOrLog" onclick="ExitOrLog()">Выход</a>
             </div>
         </div>
 
         <div class="userBLock">
             <span id="userName" class="userName"></span>
-            <div class="avatarBlock">
+            <div class="avatarBlock" id="avatar">
                 <img src="./img/Avatar.png" alt="" class="avatar">
-            </div>
-        </div>
+            </div>        </div>
     </header>
-
-<<<<<<< HEAD
-    <script src="./js/main.js"></script>
-=======
     <!-- Header end -->
 
     <div class="main">
@@ -52,7 +48,7 @@
                     короче может пройти.</span>
                 <div class="links">
                     <a href="">Я хочу создать тест</a>
-                    <a href="">Я хочу пройти тест</a>
+                    <a href="tests.html">Я хочу пройти тест</a>
                 </div>
             </div>
             <div class="image_main-items">
@@ -86,7 +82,43 @@
         </div>
     </footer>
     <script src="/js/main.js"></script>
->>>>>>> ca1a0e6b6cef0295c18f93eda8dc679a8e68f823
+
+    <script type="text/javascript">
+        let username = localStorage.getItem("username")
+        let userName = document.getElementById("userName")
+        let isLoged = localStorage.getItem('isLoged')
+        let ExitOrLogButton = document.getElementById('ExitOrLog')
+        let avatar = document.getElementById('avatar')
+
+        if(isLoged === true || isLoged === 'true'){
+            userName.style.display = 'block';
+            avatar.style.display = 'flex';
+            userName.innerHTML = username
+        }else{
+            userName.style.display = 'none';
+            avatar.style.display = 'none'
+            ExitOrLogButton.innerText = 'Войти'
+        }
+
+        function Profile(){
+            if(isLoged === true || isLoged === 'true'){
+            location.href = 'profile.html'
+        }else{
+            location.href = 'login.html'
+        }
+        }
+
+        function ExitOrLog(){
+            if(isLoged === true || isLoged === 'true'){
+                let isNotLoged = false;
+                localStorage.setItem('isLoged', isNotLoged)
+                ExitOrLogButton.innerText = 'Войти'
+                location.reload()
+            }else{
+                location.href = 'login.html'
+            }
+        }
+    </script>
 </body>
 
 </html>
