@@ -14,11 +14,15 @@ let register = () => {
         password.style.border = "2px solid red"
         passwordRepeat.style.border = "2px solid red"
         passwordAlert.innerHTML = "Пароль должен состоять как минимум из 8 знаков"
+        loginAlert.innerText = ""
+        login.style.border = ""
     }
     else if (password.value !== passwordRepeat.value) {
         password.style.border = "2px solid red"
         passwordRepeat.style.border = "2px solid red"
         passwordAlert.innerHTML = "Пароли не совпадают"
+        loginAlert.innerText = ""
+        login.style.border = ""
     }
     else {
         localStorage.setItem("username", username.value)
