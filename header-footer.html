@@ -20,7 +20,7 @@
             <div class="menu">
                 <a href="index.html" class="menuItem">Главная</a>
                 <a href="tests.html" class="menuItem">Все тесты</a>
-                <a href="" class="menuItem">Создать</a>
+                <a onclick="CreateTest()" class="menuItem" id="CreateTestBtn">Создать</a>
                 <a class="menuItem" onclick="Profile()">Профиль</a>
                 <a class="menuItem" id="ExitOrLog" onclick="ExitOrLog()">Выход</a>
             </div>
@@ -30,7 +30,8 @@
             <span id="userName" class="userName"></span>
             <div class="avatarBlock" id="avatar">
                 <img src="./img/Avatar.png" alt="" class="avatar">
-            </div>        </div>
+            </div>
+        </div>
     </header>
 
 
@@ -38,7 +39,6 @@
         <div class="footerLeft">
             <a class="logo" href="index.html" style="font-size: 72px">GLINT</a>
             <div class="footerNav">
-                <span class="menuItem">Навигация</span>
                 <div class="footerNavMenuBody">
                     <div style="margin-top: 20px">
                         <a href="" class="menuItem">Главная</a>
@@ -65,10 +65,11 @@
         let isLoged = localStorage.getItem('isLoged')
         let ExitOrLogButton = document.getElementById('ExitOrLog')
         let avatar = document.getElementById('avatar')
+        let CreateTestBtn = document.getElementById('CreateTestBtn')
 
         if (isLoged === true || isLoged === 'true') {
             userName.style.display = 'block';
-            avatar.style.display = 'block';
+            avatar.style.display = 'flex';
             userName.innerHTML = username
         } else {
             userName.style.display = 'none';
@@ -80,6 +81,7 @@
             if (isLoged === true || isLoged === 'true') {
                 location.href = 'profile.html'
             } else {
+                alert('Вы не авторизованы!')
                 location.href = 'login.html'
             }
         }
@@ -93,6 +95,20 @@
             } else {
                 location.href = 'login.html'
             }
+        }
+        function CreateTest() {
+            if (isLoged === true || isLoged === 'true') {
+                location.href = 'createtest.html.html'
+            } else {
+                alert('Вы не авторизованы!')
+                location.href = 'login.html'
+            }
+        }
+
+        function createTestsArray() {
+            let tests = []
+            localStorage.setItem('testsArray', JSON.stringify(tests))
+            console.log('crewates')
         }
     </script>
 </body>
