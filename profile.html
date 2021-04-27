@@ -20,7 +20,7 @@
             <div class="menu">
                 <a href="index.html" class="menuItem">Главная</a>
                 <a href="tests.html" class="menuItem">Все тесты</a>
-                <a href="" class="menuItem">Создать</a>
+                <a onclick="CreateTest()" class="menuItem" id="CreateTestBtn">Создать</a>
                 <a class="menuItem" onclick="Profile()">Профиль</a>
                 <a class="menuItem" id="ExitOrLog" onclick="ExitOrLog()">Выход</a>
             </div>
@@ -42,7 +42,7 @@
         <div class="userInfo">
             <div class="userBlock">
                 <div class="userImg">
-                    <img src="./img/Avatar 2.png" alt="" class="userAvatar">
+                    <img src="./img/Frame 7a.png" alt="" class="userAvatar">
                 </div>
             </div>
             <div class="userNames">
@@ -69,8 +69,14 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
+<<<<<<< HEAD
                         <button class="testCardTakeTest">Пройти</button>
                         <span class="testCardSpan namesurname">От Имя Пользователя</span>
+=======
+                        <button class="testCardTakeTest">Редактировать</button>
+                        <button class="testCardTakeTest">Удалить</button>
+                        <span class="testCardSpan">От Имя Пользователя</span>
+>>>>>>> d54a28b423c8250a64767b2132be1c7d576bd692
                     </div>
                 </div>
             </div>
@@ -84,8 +90,14 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
+<<<<<<< HEAD
                         <button class="testCardTakeTest">Пройти</button>
                         <span class="testCardSpan namesurname">От Имя Пользователя</span>
+=======
+                        <button class="testCardTakeTest">Редактировать</button>
+                        <button class="testCardTakeTest">Удалить</button>
+                        <span class="testCardSpan">От Имя Пользователя</span>
+>>>>>>> d54a28b423c8250a64767b2132be1c7d576bd692
                     </div>
                 </div>
             </div>
@@ -99,8 +111,14 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
+<<<<<<< HEAD
                         <button class="testCardTakeTest">Пройти</button>
                         <span class="testCardSpan namesurname">От Имя Пользователя</span>
+=======
+                        <button class="testCardTakeTest">Редактировать</button>
+                        <button class="testCardTakeTest">Удалить</button>
+                        <span class="testCardSpan">От Имя Пользователя</span>
+>>>>>>> d54a28b423c8250a64767b2132be1c7d576bd692
                     </div>
                 </div>
             </div>
@@ -177,6 +195,20 @@
             } else {
                 location.href = 'login.html'
             }
+        }
+        function CreateTest() {
+            if (isLoged === true || isLoged === 'true') {
+                location.href = 'createtest.html.html'
+            } else {
+                alert('Вы не авторизованы!')
+                location.href = 'login.html'
+            }
+        }
+
+        function createTestsArray() {
+            let tests = []
+            localStorage.setItem('testsArray', JSON.stringify(tests))
+            console.log('CREATED')
         }
     </script>
 </body>
