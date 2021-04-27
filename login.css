@@ -64,6 +64,7 @@ input{
     font-size: 18px;
     color: #0A306A;
     cursor: pointer;
+    border: 0;
 }
 
 .loginAlert{
@@ -84,4 +85,43 @@ a{
     font-family: "RussoOne";
     color: white;
     margin-top: 20px;
+}
+
+@media screen and (max-width: 770px){
+   .logBlock{
+        max-width: 100%;
+    }
+    .input-login{
+        width: 80%;
+    }
+    #btn{
+        width: 60%;
+    }
+    a{
+        margin: 20px auto 0 ;
+        text-align: center;
+    }
+    .block{
+        width: 90%
+    } 
+}
+
+
+@media screen and (max-width:575px){
+    .logBlock{
+        max-width: 100%;
+    }
+    .input-login{
+        width: 80%;
+    }
+    #btn{
+        width: 60%;
+    }
+    a{
+        margin: 20px auto 0 ;
+        text-align: center;
+    }
+    .block{
+        width: 90%
+    }
 }

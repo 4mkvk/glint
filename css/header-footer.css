@@ -321,3 +321,27 @@ body{
     display: flex;
     align-items: center;
 }
+.logo{
+    font-size: 72px;
+}
+
+@media screen and (max-width:575px){
+    .header{
+        /* display: none; */
+    }
+    .logo{
+        font-size: 29px;
+    }
+    .footerNav a{
+        font-size: 17px;
+    }
+    .footerNav{
+        display: flex;
+    }
+    .menuItem{
+        font-size: 14px;
+    }
+    .socialNetworks{
+        display: none;
+    }
+}

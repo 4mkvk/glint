@@ -458,3 +458,43 @@ body{
     display: flex;
     align-items: center;
 }
+
+
+
+@media screen and (max-width:575px){
+    #testsBlock{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .testCard{
+        width: 250px;
+    }
+    .testsBody{
+        padding: 0;
+        height: auto;
+        padding: 20px 0;
+    }
+    .testCardImageBlock{
+        display: none;
+    }
+    .namesurname{
+    margin-left: 30px;
+    }
+    .testCard{
+        margin: 15px;
+    }
+    .userAvatar{
+        width: 100px;
+        height: auto;
+    }
+    .userInfo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .title{
+        font-size: 20px;
+    }
+}
