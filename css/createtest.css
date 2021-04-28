@@ -82,3 +82,17 @@ input{
     border-radius: 15px;
     cursor: pointer;
 }
+
+.wrapper-one{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 70%;
+    /* margin: 0 auto; */
+}
+.first{
+    margin-top: 30px;
+}
+.image-wrapper{
+    margin: 10px 0;
+}
