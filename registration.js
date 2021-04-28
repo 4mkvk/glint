@@ -4,6 +4,7 @@ let loginAlert = document.getElementById("loginAlert")
 let password = document.getElementById("passwordInput")
 let passwordRepeat = document.getElementById("repeatInput")
 let passwordAlert = document.getElementById("passwordAlert")
+let users = JSON.parse(localStorage.getItem("users"))
 
 let register = () => {
     if (login.value.length < 6) {
@@ -25,9 +26,15 @@ let register = () => {
         login.style.border = ""
     }
     else {
-        localStorage.setItem("username", username.value)
-        localStorage.setItem("login", login.value)
-        localStorage.setItem("password", password.value)
+        let random = Math.floor(Math.random() * 1000) + 1;
+        let user = {
+            userId: random,
+            userName: username.value,
+            userLogin: login.value,
+            userPassword: password.value,
+        }
+        users.push(user)
+        localStorage.setItem('users', JSON.stringify(users))
         location.href = "login.html"
     }
 }

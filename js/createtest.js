@@ -1,6 +1,19 @@
 let tests = JSON.parse(localStorage.getItem("testsArray"))
 console.log(tests)
 
+$("#question").hide();
+let isOpen = false;
+
+$("#startBtn").click(function () {
+    if (isOpen) {
+        $("#question").slideUp(1500)
+        isOpen = false
+    } else {
+        $("#question").slideDown(1500)
+        isOpen = true
+    }
+})
+
 let createTestBtn = () => {
     let testName = document.getElementById("title").value
     let testCategory = document.getElementById("theme").value
@@ -77,172 +90,231 @@ let createTestBtn = () => {
     let correctAnswer102 = document.getElementsByName("correct10")[1]
     //  получили валую всех инпутов 
 
-    let test = {
-        testName: testName,
-        testCategory: testCategory,
-        questions: [
-            {
-                questionTitle: question1,
-                questionAnswers: [
-                    question1Variant1,
-                    question1Variant2,
-                ],
-                correctAnswers1Index: 0
-            },
-            {
-                questionTitle: question2,
-                questionAnswers: [
-                    question2Variant1,
-                    question2Variant2,
-                ],
-                correctAnswers2Index: 0
-            },
-            {
-                questionTitle: question3,
-                questionAnswers: [
-                    question3Variant1,
-                    question3Variant2,
-                ],
-                correctAnswers3Index: 0
-            },
-            {
-                questionTitle: question4,
-                questionAnswers: [
-                    question4Variant1,
-                    question4Variant2,
-                ],
-                correctAnswers4Index: 0
-            },
-            {
-                questionTitle: question5,
-                questionAnswers: [
-                    question5Variant1,
-                    question5Variant2,
-                ],
-                correctAnswers5Index: 0
-            },
-            {
-                questionTitle: question6,
-                questionAnswers: [
-                    question6Variant1,
-                    question6Variant2,
-                ],
-                correctAnswers6Index: 0
-            },
-            {
-                questionTitle: question7,
-                questionAnswers: [
-                    question7Variant1,
-                    question7Variant2,
-                ],
-                correctAnswers7Index: 0
-            },
-            {
-                questionTitle: question8,
-                questionAnswers: [
-                    question8Variant1,
-                    question8Variant2,
-                ],
-                correctAnswers8Index: 0
-            },
-            {
-                questionTitle: question9,
-                questionAnswers: [
-                    question9Variant1,
-                    question9Variant2,
-                ],
-                correctAnswers9Index: 0
-            },
-            {
-                questionTitle: question10,
-                questionAnswers: [
-                    question10Variant1,
-                    question10Variant2,
-                ],
-                correctAnswers10Index: 0
-            },
-        ]
+
+    if (question1.value.length === 0) {
+        question1.style.border = "2px solid red"
+    } else if (question2.value.length === 0) {
+        question2.style.border = "2px solid red"
+    } else if (question3.value.length === 0) {
+        question3.style.border = "2px solid red"
+    } else if (question4.value.length === 0) {
+        question4.style.border = "2px solid red"
+    } else if (question5.value.length === 0) {
+        question5.style.border = "2px solid red"
+    } else if (question6.value.length === 0) {
+        question6.style.border = "2px solid red"
+    } else if (question7.value.length === 0) {
+        question7.style.border = "2px solid red"
+    } else if (question8.value.length === 0) {
+        question8.style.border = "2px solid red"
+    } else if (question9.value.length === 0) {
+        question9.style.border = "2px solid red"
+    } else if (question10.value.length === 0) {
+        question10.style.border = "2px solid red"
     }
-    // создание теста 
+    else if (question1Variant1.length === 0 && question1Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question2Variant1.length === 0 && question2Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question3Variant1.length === 0 && question3Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question4Variant1.length === 0 && question4Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question5Variant1.length === 0 && question5Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question6Variant1.length === 0 && question6Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question7Variant1.length === 0 && question7Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question8Variant1.length === 0 && question8Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question9Variant1.length === 0 && question9Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else if (question10Variant1.length === 0 && question10Variant2.length === 0) {
+        alert("Введите варианты ответа")
+    } else {
 
-    if (correctAnswer11.checked === true) {
-        test.questions[0].correctAnswers1Index = 0;
-    } else if (correctAnswer12.checked === true) {
-        test.questions[0].correctAnswers1Index = 1;
+        if (correctAnswer11.checked === false && correctAnswer12.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer21.checked === false && correctAnswer22.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer31.checked === false && correctAnswer32.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer41.checked === false && correctAnswer42.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer51.checked === false && correctAnswer52.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer61.checked === false && correctAnswer62.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer71.checked === false && correctAnswer72.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer81.checked === false && correctAnswer82.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer91.checked === false && correctAnswer92.checked === false) {
+            alert("Отметьте вариант ответа")
+        } else if (correctAnswer101.checked === false && correctAnswer102.checked === false) {
+            alert("Отметьте вариант ответа")
+        }
+        else {
+            let test = {
+                testName: testName,
+                testCategory: testCategory,
+                questions: [
+                    {
+                        questionTitle: question1,
+                        questionAnswers: [
+                            question1Variant1,
+                            question1Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question2,
+                        questionAnswers: [
+                            question2Variant1,
+                            question2Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question3,
+                        questionAnswers: [
+                            question3Variant1,
+                            question3Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question4,
+                        questionAnswers: [
+                            question4Variant1,
+                            question4Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question5,
+                        questionAnswers: [
+                            question5Variant1,
+                            question5Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question6,
+                        questionAnswers: [
+                            question6Variant1,
+                            question6Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question7,
+                        questionAnswers: [
+                            question7Variant1,
+                            question7Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question8,
+                        questionAnswers: [
+                            question8Variant1,
+                            question8Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question9,
+                        questionAnswers: [
+                            question9Variant1,
+                            question9Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                    {
+                        questionTitle: question10,
+                        questionAnswers: [
+                            question10Variant1,
+                            question10Variant2,
+                        ],
+                        correctAnswersIndex: 0
+                    },
+                ]
+            }
+            // создание теста 
+
+
+            if (correctAnswer11.checked === true) {
+                test.questions[0].correctAnswersIndex = 0;
+            } else if (correctAnswer12.checked === true) {
+                test.questions[0].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer21.checked === true) {
+                test.questions[1].correctAnswersIndex = 0;
+            } else if (correctAnswer22.checked === true) {
+                test.questions[1].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer31.checked === true) {
+                test.questions[2].correctAnswersIndex = 0;
+            } else if (correctAnswer32.checked === true) {
+                test.questions[2].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer41.checked === true) {
+                test.questions[3].correctAnswersIndex = 0;
+            } else if (correctAnswer42.checked === true) {
+                test.questions[3].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer51.checked === true) {
+                test.questions[4].correctAnswersIndex = 0;
+            } else if (correctAnswer52.checked === true) {
+                test.questions[4].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer61.checked === true) {
+                test.questions[5].correctAnswersIndex = 0;
+            } else if (correctAnswer62.checked === true) {
+                test.questions[5].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer71.checked === true) {
+                test.questions[6].correctAnswersIndex = 0;
+            } else if (correctAnswer72.checked === true) {
+                test.questions[6].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer81.checked === true) {
+                test.questions[7].correctAnswersIndex = 0;
+            } else if (correctAnswer82.checked === true) {
+                test.questions[7].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer91.checked === true) {
+                test.questions[8].correctAnswersIndex = 0;
+            } else if (correctAnswer92.checked === true) {
+                test.questions[8].correctAnswersIndex = 1;
+            }
+
+            if (correctAnswer101.checked === true) {
+                test.questions[9].correctAnswersIndex = 0;
+            } else if (correctAnswer102.checked === true) {
+                test.questions[9].correctAnswersIndex = 1;
+            }
+
+            // присваивание правильных ответов 
+
+            tests.push(test)
+            localStorage.setItem('testsArray', JSON.stringify(tests))
+            location.reload()
+        }
     }
 
-    if (correctAnswer21.checked === true) {
-        test.questions[1].correctAnswers2Index = 0;
-    } else if (correctAnswer22.checked === true) {
-        test.questions[1].correctAnswers2Index = 1;
-    }
-
-    if (correctAnswer31.checked === true) {
-        test.questions[2].correctAnswers3Index = 0;
-    } else if (correctAnswer32.checked === true) {
-        test.questions[2].correctAnswers3Index = 1;
-    }
-
-    if (correctAnswer41.checked === true) {
-        test.questions[3].correctAnswers4Index = 0;
-    } else if (correctAnswer42.checked === true) {
-        test.questions[3].correctAnswers4Index = 1;
-    }
-
-    if (correctAnswer51.checked === true) {
-        test.questions[4].correctAnswers5Index = 0;
-    } else if (correctAnswer52.checked === true) {
-        test.questions[4].correctAnswers5Index = 1;
-    }
-
-    if (correctAnswer61.checked === true) {
-        test.questions[5].correctAnswers6Index = 0;
-    } else if (correctAnswer62.checked === true) {
-        test.questions[5].correctAnswers6Index = 1;
-    }
-
-    if (correctAnswer71.checked === true) {
-        test.questions[6].correctAnswers7Index = 0;
-    } else if (correctAnswer72.checked === true) {
-        test.questions[6].correctAnswers7Index = 1;
-    }
-
-    if (correctAnswer81.checked === true) {
-        test.questions[7].correctAnswers8Index = 0;
-    } else if (correctAnswer82.checked === true) {
-        test.questions[7].correctAnswers8Index = 1;
-    }
-
-    if (correctAnswer91.checked === true) {
-        test.questions[8].correctAnswers9Index = 0;
-    } else if (correctAnswer92.checked === true) {
-        test.questions[8].correctAnswers9Index = 1;
-    }
-
-    if (correctAnswer101.checked === true) {
-        test.questions[9].correctAnswers10Index = 0;
-    } else if (correctAnswer102.checked === true) {
-        test.questions[9].correctAnswers10Index = 1;
-    }
-
-    // присваивание правильных ответов 
-
-    tests.push(test)
-    localStorage.setItem('testsArray', JSON.stringify(tests))
-    location.reload()
 }
 
-let isOpen = false;
-
-$("#startBtn").click(function () {
-    if (isOpen) {
-        $("#question").slideUp(1500)
-        isOpen = false
-    } else {
-        $("#question").slideDown(1500)
-        isOpen = true
-    }
-})
 
 function showArray() {
     console.log(JSON.stringify(tests))
