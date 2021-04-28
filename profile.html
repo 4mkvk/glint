@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/header-footer.css">
     <link rel="stylesheet" href="./css/profile.css">
     <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -51,7 +53,7 @@
                     <span id="uName"></span>
                 </span>
                 <p class="title">Логин:
-                    <span id="userLogin"></span>
+                    <span id="uLogin"></span>
                 </p>
             </div>
         </div>
@@ -60,6 +62,7 @@
         </div>
 
         <div id="testsBlock">
+<<<<<<< HEAD
             <div class="testCard">
                 <div class="testCardImageBlock">
                     <img src="./img/test-card.png" alt="" class="testCardImage">
@@ -116,6 +119,9 @@
                     </div>
                 </div>
             </div>
+=======
+
+>>>>>>> 7cb54d4cc6d1df4cd642d6b643066e29d0d77b0b
         </div>
     </div>
 
@@ -156,6 +162,8 @@
         let ExitOrLogButton = document.getElementById('ExitOrLog')
         let avatar = document.getElementById('avatar')
         let CreateTestBtn = document.getElementById('CreateTestBtn')
+        let uName = document.getElementById('uName')
+        let uLogin = document.getElementById('uLogin')
 
         if (localStorage.getItem('loggedUser') === null) {
             userNameHTML.style.display = 'none';
@@ -167,6 +175,8 @@
             console.log(loggedUser)
             ExitOrLogButton.innerText = 'Выход'
             userNameHTML.innerText = loggedUser.userName;
+            uName.innerText = loggedUser.userName;
+            uLogin.innerText = loggedUser.userLogin;
         }
 
 
