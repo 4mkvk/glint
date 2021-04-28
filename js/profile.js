@@ -1,4 +1,4 @@
-function editing(){
+function editing() {
     location.href = "editing.html";
 }
 
@@ -10,8 +10,8 @@ console.log(tests)
 console.log(users)
 console.log(loggedUser)
 
-for(let i = 0; i < tests.length; i++){
-    if(loggedUser.userId === tests[i].userId){
+for (let i = 0; i < tests.length; i++) {
+    if (loggedUser.userId === tests[i].userId) {
         testsBlock.append(`
     <div class="testCard">
             <div class="testCardImageBlock">
@@ -19,7 +19,7 @@ for(let i = 0; i < tests.length; i++){
                 </div>
                     <div class="testCardContent">
                         <div class="testCardTitleBlock">
-                            <span class="testCardTitle">Насколько ты крут?</span>
+                            <span class="testCardTitle">${tests[i].testName}</span>
                             <span class="testCardSpan">10 вопросов</span>
                         </div>
                         <div class="testCardDownBlock">
