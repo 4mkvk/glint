@@ -494,6 +494,8 @@ body{
     }
     .namesurname{
     margin-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     }
     .testCard{
         margin: 15px;
@@ -509,5 +511,17 @@ body{
     }
     .title{
         font-size: 20px;
+    }
+    #userName{
+        display: none;
+    }
+    .testCardTakeTest{
+        font-size: 11px;
+    }
+    .buttons-wrapper{
+        flex-wrap: wrap;
+    }
+    .testCardDownBlock {
+    width: 260px;
     }
 }

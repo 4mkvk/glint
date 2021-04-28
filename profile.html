@@ -70,20 +70,11 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
-<<<<<<< HEAD
                         <div class="buttons-wrapper">
-                            <button class="testCardTakeTest">Редактировать</button>
+                            <button class="testCardTakeTest" onclick="editing()">Редактировать</button>
                             <button class="testCardTakeTest">Удалить</button>
+                            <span class="testCardSpan namesurname">От Имя Пользователя</span>
                         </div>
-                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
-=======
-                        <button class="testCardTakeTest">Пройти</button>
-                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
-                        <button class="testCardTakeTest">Редактировать</button>
-                        <button class="testCardTakeTest">Удалить</button>
-                        <span class="testCardSpan">От Имя Пользователя</span>
-                        <span class="testCardSpan">От вас</span>
->>>>>>> 349f67882c455e4057ad2c6c2bd29867ada628d9
                     </div>
                 </div>
             </div>
@@ -97,20 +88,11 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
-<<<<<<< HEAD
                         <div class="buttons-wrapper">
-                            <button class="testCardTakeTest">Редактировать</button>
+                            <button class="testCardTakeTest" onclick="editing()">Редактировать</button>
                             <button class="testCardTakeTest">Удалить</button>
+                            <span class="testCardSpan namesurname">От Имя Пользователя</span>
                         </div>
-                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
-=======
-                        <button class="testCardTakeTest">Пройти</button>
-                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
-                        <button class="testCardTakeTest">Редактировать</button>
-                        <button class="testCardTakeTest">Удалить</button>
-                        <span class="testCardSpan">От Имя Пользователя</span>
-                        <span class="testCardSpan">От вас</span>                    
->>>>>>> 349f67882c455e4057ad2c6c2bd29867ada628d9
                     </div>
                 </div>
             </div>
@@ -124,24 +106,16 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
-<<<<<<< HEAD
                         <div class="buttons-wrapper">
-                            <button class="testCardTakeTest">Редактировать</button>
+                            <button class="testCardTakeTest" onclick="editing()">Редактировать</button>
                             <button class="testCardTakeTest">Удалить</button>
+                            <span class="testCardSpan namesurname">От Имя Пользователя</span>
                         </div>
-                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
-=======
-                        <button class="testCardTakeTest">Пройти</button>
-                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
-                        <button class="testCardTakeTest">Редактировать</button>
-                        <button class="testCardTakeTest">Удалить</button>
-                        <span class="testCardSpan">От Имя Пользователя</span>
-                        <span class="testCardSpan">От вас</span>
->>>>>>> 349f67882c455e4057ad2c6c2bd29867ada628d9
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
@@ -189,8 +163,6 @@
         } else {
             let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
             console.log(loggedUser)
-            userName.style.display = 'block';
-            avatar.style.display = 'flex';
             ExitOrLogButton.innerText = 'Выход'
             userNameHTML.innerText = loggedUser.userName;
         }
