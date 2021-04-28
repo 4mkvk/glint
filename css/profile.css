@@ -360,7 +360,7 @@ body{
 .testCard{
     border: 3px solid white;
     height: 150px;
-    width: 40%;
+    width: 35%;
     border-radius: 20px;
     display: flex;
     padding: 10px;
@@ -414,9 +414,14 @@ body{
 }
 .testCardTakeTest:hover{
     cursor: pointer;
+    position: relative;
+    bottom: 5px;
+    transform: rotate(360deg);
 }
 .testCard:hover .testCardTakeTest{
-    border: white 1px solid;
+    /* border: white 1px solid; */
+    background-color: black;
+    transition: all 0.5s linear;
 }
 .testCardDownBlock{
     width: 100%;
@@ -440,6 +445,14 @@ body{
     color: black;
     transition: all 1s linear 0.1ms;
     box-shadow: 0px 1px 2px 3px rgba(0,0,0,0.5) ;
+}
+.buttons-wrapper{
+    display: flex;
+}
+.testCardTakeTest{
+    margin: 0 10px;
+    border: none;
+    outline: none;
 }
 
 /* footer  */
