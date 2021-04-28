@@ -1,4 +1,5 @@
-function editing() {
+function editing(id) {
+    localStorage.setItem('currentTestId', JSON.stringify(id))
     location.href = "editing.html";
 }
 
@@ -24,7 +25,7 @@ for (let i = 0; i < tests.length; i++) {
                         </div>
                         <div class="testCardDownBlock">
                             <div class="buttons-wrapper">
-                                <button class="testCardTakeTest" onclick="editing()">Редактировать</button>
+                                <button class="testCardTakeTest" onclick="editing(${tests[i].currentTestId})">Редактировать</button>
                                 <button class="testCardTakeTest">Удалить</button>
                             </div>
                             <button class="testCardTakeTest">Пройти</button>
@@ -34,3 +35,6 @@ for (let i = 0; i < tests.length; i++) {
     `)
     }
 }
+
+
+

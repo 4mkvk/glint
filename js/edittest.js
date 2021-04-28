@@ -1,7 +1,14 @@
 let tests = JSON.parse(localStorage.getItem("testsArray"))
 let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
-console.log(loggedUser)
-console.log(tests)
+let currentTestId = JSON.parse(localStorage.getItem('currentTestId'))
+let currentTest = null;
+for (i = 0; i < tests.length; i++) {
+    if (tests[i].currentTestId === currentTestId) {
+        currentTest = tests[i]
+    }
+}
+
+console.log(currentTest)
 
 $("#question").hide();
 let isOpen = false;
@@ -15,7 +22,128 @@ $("#startBtn").click(function () {
         isOpen = true
     }
 })
+let testName = document.getElementById("title")
+let testCategory = document.getElementById("theme")
 
+let question1 = document.getElementById("question1text")
+let question2 = document.getElementById("question2text")
+let question3 = document.getElementById("question3text")
+let question4 = document.getElementById("question4text")
+let question5 = document.getElementById("question5text")
+let question6 = document.getElementById("question6text")
+let question7 = document.getElementById("question7text")
+let question8 = document.getElementById("question8text")
+let question9 = document.getElementById("question9text")
+let question10 = document.getElementById("question10text")
+
+let question1Variant1 = document.getElementById("question1Variant1")
+let question1Variant2 = document.getElementById("question1Variant2")
+
+let correctAnswer11 = document.getElementsByName("correct1")[0]
+let correctAnswer12 = document.getElementsByName("correct1")[1]
+
+let question2Variant1 = document.getElementById("question2Variant1")
+let question2Variant2 = document.getElementById("question2Variant2")
+
+let correctAnswer21 = document.getElementsByName("correct2")[0]
+let correctAnswer22 = document.getElementsByName("correct2")[1]
+
+let question3Variant1 = document.getElementById("question3Variant1")
+let question3Variant2 = document.getElementById("question3Variant2")
+
+let correctAnswer31 = document.getElementsByName("correct3")[0]
+let correctAnswer32 = document.getElementsByName("correct3")[1]
+
+let question4Variant1 = document.getElementById("question4Variant1")
+let question4Variant2 = document.getElementById("question4Variant2")
+
+let correctAnswer41 = document.getElementsByName("correct4")[0]
+let correctAnswer42 = document.getElementsByName("correct4")[1]
+
+let question5Variant1 = document.getElementById("question5Variant1")
+let question5Variant2 = document.getElementById("question5Variant2")
+
+let correctAnswer51 = document.getElementsByName("correct5")[0]
+let correctAnswer52 = document.getElementsByName("correct5")[1]
+
+let question6Variant1 = document.getElementById("question6Variant1")
+let question6Variant2 = document.getElementById("question6Variant2")
+
+let correctAnswer61 = document.getElementsByName("correct6")[0]
+let correctAnswer62 = document.getElementsByName("correct6")[1]
+
+let question7Variant1 = document.getElementById("question7Variant1")
+let question7Variant2 = document.getElementById("question7Variant2")
+
+let correctAnswer71 = document.getElementsByName("correct7")[0]
+let correctAnswer72 = document.getElementsByName("correct7")[1]
+
+let question8Variant1 = document.getElementById("question8Variant1")
+let question8Variant2 = document.getElementById("question8Variant2")
+
+let correctAnswer81 = document.getElementsByName("correct8")[0]
+let correctAnswer82 = document.getElementsByName("correct8")[1]
+
+let question9Variant1 = document.getElementById("question9Variant1")
+let question9Variant2 = document.getElementById("question9Variant2")
+
+let correctAnswer91 = document.getElementsByName("correct9")[0]
+let correctAnswer92 = document.getElementsByName("correct9")[1]
+
+let question10Variant1 = document.getElementById("question10Variant1")
+let question10Variant2 = document.getElementById("question10Variant2")
+
+let correctAnswer101 = document.getElementsByName("correct10")[0]
+let correctAnswer102 = document.getElementsByName("correct10")[1]
+//  получили валую всех инпутов 
+
+testName.value = currentTest.testName
+testCategory.value = currentTest.testCategory
+
+question1.value = currentTest['questions'][0]['questionTitle']
+question2.value = currentTest['questions'][1]['questionTitle']
+question3.value = currentTest['questions'][2]['questionTitle']
+question4.value = currentTest['questions'][3]['questionTitle']
+question5.value = currentTest['questions'][4]['questionTitle']
+question6.value = currentTest['questions'][5]['questionTitle']
+question7.value = currentTest['questions'][6]['questionTitle']
+question8.value = currentTest['questions'][7]['questionTitle']
+question9.value = currentTest['questions'][8]['questionTitle']
+question10.value = currentTest['questions'][9]['questionTitle']
+
+
+question1Variant1.value = currentTest['questions'][0]['questionAnswers'][0]
+question1Variant2.value = currentTest['questions'][0]['questionAnswers'][1]
+
+question2Variant1.value = currentTest['questions'][1]['questionAnswers'][0]
+question2Variant2.value = currentTest['questions'][1]['questionAnswers'][1]
+
+question3Variant1.value = currentTest['questions'][2]['questionAnswers'][0]
+question3Variant2.value = currentTest['questions'][2]['questionAnswers'][1]
+
+question4Variant1.value = currentTest['questions'][3]['questionAnswers'][0]
+question4Variant2.value = currentTest['questions'][3]['questionAnswers'][1]
+
+question5Variant1.value = currentTest['questions'][4]['questionAnswers'][0]
+question5Variant2.value = currentTest['questions'][4]['questionAnswers'][1]
+
+question6Variant1.value = currentTest['questions'][5]['questionAnswers'][0]
+question6Variant2.value = currentTest['questions'][5]['questionAnswers'][1]
+
+question7Variant1.value = currentTest['questions'][6]['questionAnswers'][0]
+question7Variant2.value = currentTest['questions'][6]['questionAnswers'][1]
+
+question8Variant1.value = currentTest['questions'][7]['questionAnswers'][0]
+question8Variant2.value = currentTest['questions'][7]['questionAnswers'][1]
+
+question9Variant1.value = currentTest['questions'][8]['questionAnswers'][0]
+question9Variant2.value = currentTest['questions'][8]['questionAnswers'][1]
+
+question10Variant1.value = currentTest['questions'][9]['questionAnswers'][0]
+question10Variant2.value = currentTest['questions'][9]['questionAnswers'][1]
+
+
+// заполнение данных для редактирования 
 let createTestBtn = () => {
     let testName = document.getElementById("title").value
     let testCategory = document.getElementById("theme").value
@@ -93,6 +221,7 @@ let createTestBtn = () => {
     //  получили валую всех инпутов 
 
 
+
     if (question1.value.length === 0) {
         question1.style.border = "2px solid red"
     } else if (question2.value.length === 0) {
@@ -166,7 +295,7 @@ let createTestBtn = () => {
                 testCategory: testCategory,
                 questions: [
                     {
-                        questionTitle: question1.value,
+                        questionTitle: question1,
                         questionAnswers: [
                             question1Variant1,
                             question1Variant2,
@@ -174,7 +303,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question2.value,
+                        questionTitle: question2,
                         questionAnswers: [
                             question2Variant1,
                             question2Variant2,
@@ -182,7 +311,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question3.value,
+                        questionTitle: question3,
                         questionAnswers: [
                             question3Variant1,
                             question3Variant2,
@@ -190,7 +319,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question4.value,
+                        questionTitle: question4,
                         questionAnswers: [
                             question4Variant1,
                             question4Variant2,
@@ -198,7 +327,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question5.value,
+                        questionTitle: question5,
                         questionAnswers: [
                             question5Variant1,
                             question5Variant2,
@@ -206,7 +335,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question6.value,
+                        questionTitle: question6,
                         questionAnswers: [
                             question6Variant1,
                             question6Variant2,
@@ -214,7 +343,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question7.value,
+                        questionTitle: question7,
                         questionAnswers: [
                             question7Variant1,
                             question7Variant2,
@@ -222,7 +351,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question8.value,
+                        questionTitle: question8,
                         questionAnswers: [
                             question8Variant1,
                             question8Variant2,
@@ -230,7 +359,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question9.value,
+                        questionTitle: question9,
                         questionAnswers: [
                             question9Variant1,
                             question9Variant2,
@@ -238,7 +367,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question10.value,
+                        questionTitle: question10,
                         questionAnswers: [
                             question10Variant1,
                             question10Variant2,
