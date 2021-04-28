@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Профиль - GLINT.kz</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
     <link rel="stylesheet" href="./css/header-footer.css">
     <link rel="stylesheet" href="./css/profile.css">
     <link rel="icon" type="image/png" href="./img/favicon.png" />
@@ -69,11 +70,20 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
+<<<<<<< HEAD
                         <div class="buttons-wrapper">
                             <button class="testCardTakeTest">Редактировать</button>
                             <button class="testCardTakeTest">Удалить</button>
                         </div>
                         <span class="testCardSpan namesurname">От Имя Пользователя</span>
+=======
+                        <button class="testCardTakeTest">Пройти</button>
+                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
+                        <button class="testCardTakeTest">Редактировать</button>
+                        <button class="testCardTakeTest">Удалить</button>
+                        <span class="testCardSpan">От Имя Пользователя</span>
+                        <span class="testCardSpan">От вас</span>
+>>>>>>> 349f67882c455e4057ad2c6c2bd29867ada628d9
                     </div>
                 </div>
             </div>
@@ -87,11 +97,20 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
+<<<<<<< HEAD
                         <div class="buttons-wrapper">
                             <button class="testCardTakeTest">Редактировать</button>
                             <button class="testCardTakeTest">Удалить</button>
                         </div>
                         <span class="testCardSpan namesurname">От Имя Пользователя</span>
+=======
+                        <button class="testCardTakeTest">Пройти</button>
+                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
+                        <button class="testCardTakeTest">Редактировать</button>
+                        <button class="testCardTakeTest">Удалить</button>
+                        <span class="testCardSpan">От Имя Пользователя</span>
+                        <span class="testCardSpan">От вас</span>                    
+>>>>>>> 349f67882c455e4057ad2c6c2bd29867ada628d9
                     </div>
                 </div>
             </div>
@@ -105,11 +124,20 @@
                         <span class="testCardSpan">10 вопросов</span>
                     </div>
                     <div class="testCardDownBlock">
+<<<<<<< HEAD
                         <div class="buttons-wrapper">
                             <button class="testCardTakeTest">Редактировать</button>
                             <button class="testCardTakeTest">Удалить</button>
                         </div>
                         <span class="testCardSpan namesurname">От Имя Пользователя</span>
+=======
+                        <button class="testCardTakeTest">Пройти</button>
+                        <span class="testCardSpan namesurname">От Имя Пользователя</span>
+                        <button class="testCardTakeTest">Редактировать</button>
+                        <button class="testCardTakeTest">Удалить</button>
+                        <span class="testCardSpan">От Имя Пользователя</span>
+                        <span class="testCardSpan">От вас</span>
+>>>>>>> 349f67882c455e4057ad2c6c2bd29867ada628d9
                     </div>
                 </div>
             </div>
@@ -129,12 +157,12 @@
             <div class="footerNav">
                 <div class="footerNavMenuBody">
                     <div>
-                        <a href="" class="menuItem">Главная</a>
-                        <a href="" class="menuItem">Все Тесты</a>
+                        <a href="index.html" class="menuItem">Главная</a>
+                        <a href="tests.html" class="menuItem">Все Тесты</a>
                     </div>
                     <div>
-                        <a href="" class="menuItem">Создать</a>
-                        <a href="" class="menuItem">Профиль</a>
+                        <a onclick="CreateTest()" class="menuItem">Создать</a>
+                        <a onclick="Profile()" class="menuItem">Профиль</a>
                     </div>
                 </div>
             </div>
@@ -148,56 +176,59 @@
     </footer>
 
     <script type="text/javascript">
-        let username = localStorage.getItem("username")
-        let userlogin = localStorage.getItem("login")
-        let userName = document.getElementById("userName")
-        let uName = document.getElementById("uName")
-        let userLogin = document.getElementById("userLogin")
-        let isLoged = localStorage.getItem('isLoged')
+        let userNameHTML = document.getElementById("userName")
         let ExitOrLogButton = document.getElementById('ExitOrLog')
         let avatar = document.getElementById('avatar')
+        let CreateTestBtn = document.getElementById('CreateTestBtn')
 
-        if (isLoged === true || isLoged === 'true') {
-            userName.style.display = 'block';
-            avatar.style.display = 'block';
-            userName.innerHTML = username
-            uName.innerHTML = username
-            userLogin.innerHTML = userlogin
-        } else {
-            userName.style.display = 'none';
+        if (localStorage.getItem('loggedUser') === null) {
+            userNameHTML.style.display = 'none';
             avatar.style.display = 'none'
             ExitOrLogButton.innerText = 'Войти'
+
+        } else {
+            let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+            console.log(loggedUser)
+            userName.style.display = 'block';
+            avatar.style.display = 'flex';
+            ExitOrLogButton.innerText = 'Выход'
+            userNameHTML.innerText = loggedUser.userName;
         }
 
+
+
         function Profile() {
-            if (isLoged === true || isLoged === 'true') {
-                location.href = 'profile.html'
-            } else {
+            if (localStorage.getItem('loggedUser') === null) {
+                alert('Вы не авторизованы!')
                 location.href = 'login.html'
+            } else {
+                location.href = 'profile.html'
             }
         }
 
         function ExitOrLog() {
-            if (isLoged === true || isLoged === 'true') {
-                let isNotLoged = false;
-                localStorage.setItem('isLoged', isNotLoged)
+            if (localStorage.getItem('loggedUser') === null) {
+                location.href = 'login.html'
+
+            } else {
+                localStorage.removeItem('loggedUser')
                 ExitOrLogButton.innerText = 'Войти'
                 location.reload()
-            } else {
-                location.href = 'login.html'
             }
         }
         function CreateTest() {
-            if (isLoged === true || isLoged === 'true') {
-                location.href = 'createtest.html.html'
-            } else {
+            if (localStorage.getItem('loggedUser') === null) {
                 alert('Вы не авторизованы!')
                 location.href = 'login.html'
+            } else {
+                location.href = 'createtest.html.html'
             }
         }
 
         function createTestsArray() {
             let tests = []
+            let users = []
+            localStorage.setItem('users', JSON.stringify(users))
             localStorage.setItem('testsArray', JSON.stringify(tests))
             console.log('CREATED')
         }
