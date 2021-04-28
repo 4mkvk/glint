@@ -41,12 +41,12 @@
             <div class="footerNav">
                 <div class="footerNavMenuBody">
                     <div>
-                        <a href="" class="menuItem">Главная</a>
-                        <a href="" class="menuItem">Все Тесты</a>
+                        <a href="index.html" class="menuItem">Главная</a>
+                        <a href="tests.html" class="menuItem">Все Тесты</a>
                     </div>
                     <div>
-                        <a href="" class="menuItem">Создать</a>
-                        <a href="" class="menuItem">Профиль</a>
+                        <a onclick="CreateTest()" class="menuItem">Создать</a>
+                        <a onclick="Profile()" class="menuItem">Профиль</a>
                     </div>
                 </div>
             </div>
@@ -60,55 +60,61 @@
     </footer>
 
     <script type="text/javascript">
-        let username = localStorage.getItem("username")
-        let userName = document.getElementById("userName")
-        let isLoged = localStorage.getItem('isLoged')
+        let userNameHTML = document.getElementById("userName")
         let ExitOrLogButton = document.getElementById('ExitOrLog')
         let avatar = document.getElementById('avatar')
         let CreateTestBtn = document.getElementById('CreateTestBtn')
 
-        if (isLoged === true || isLoged === 'true') {
-            userName.style.display = 'block';
-            avatar.style.display = 'flex';
-            userName.innerHTML = username
-        } else {
-            userName.style.display = 'none';
+        if (localStorage.getItem('loggedUser') === null) {
+            userNameHTML.style.display = 'none';
             avatar.style.display = 'none'
             ExitOrLogButton.innerText = 'Войти'
+
+        } else {
+            let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+            console.log(loggedUser)
+            userName.style.display = 'block';
+            avatar.style.display = 'flex';
+            ExitOrLogButton.innerText = 'Выход'
+            userNameHTML.innerText = loggedUser.userName;
         }
 
+
+
         function Profile() {
-            if (isLoged === true || isLoged === 'true') {
-                location.href = 'profile.html'
-            } else {
+            if (localStorage.getItem('loggedUser') === null) {
                 alert('Вы не авторизованы!')
                 location.href = 'login.html'
+            } else {
+                location.href = 'profile.html'
             }
         }
 
         function ExitOrLog() {
-            if (isLoged === true || isLoged === 'true') {
-                let isNotLoged = false;
-                localStorage.setItem('isLoged', isNotLoged)
+            if (localStorage.getItem('loggedUser') === null) {
+                location.href = 'login.html'
+
+            } else {
+                localStorage.removeItem('loggedUser')
                 ExitOrLogButton.innerText = 'Войти'
                 location.reload()
-            } else {
-                location.href = 'login.html'
             }
         }
         function CreateTest() {
-            if (isLoged === true || isLoged === 'true') {
-                location.href = 'createtest.html.html'
-            } else {
+            if (localStorage.getItem('loggedUser') === null) {
                 alert('Вы не авторизованы!')
                 location.href = 'login.html'
+            } else {
+                location.href = 'createtest.html.html'
             }
         }
 
         function createTestsArray() {
             let tests = []
+            let users = []
+            localStorage.setItem('users', JSON.stringify(users))
             localStorage.setItem('testsArray', JSON.stringify(tests))
-            console.log('crewates')
+            console.log('CREATED')
         }
     </script>
 </body>
