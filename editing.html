@@ -54,9 +54,9 @@
       <div class="question-block"><input type="text" placeholder="Вопрос №1" id="question1text"></div>
       <div class="variants-wrapper">
         <input type="text" placeholder="Вариант 1" id="question1Variant1"> <input type="radio" name="correct1"
-          id="correct1">
+          id="correct1" value="1">
         <input type="text" placeholder="Вариант 2" id="question1Variant2"> <input type="radio" name="correct1"
-          id="correct1">
+          id="correct1" value="2">
       </div>
     </div>
 
@@ -173,16 +173,16 @@
 
   <footer class="footer">
     <div class="footerLeft">
-      <a class="logo" href="index.html">GLINT</a>
+      <a class="logo" href="index.html" style="font-size: 72px">GLINT</a>
       <div class="footerNav">
         <div class="footerNavMenuBody">
-          <div>
-            <a href="index.html" class="menuItem">Главная</a>
-            <a href="tests.html" class="menuItem">Все Тесты</a>
+          <div style="margin-top: 20px">
+            <a href="" class="menuItem">Главная</a>
+            <a href="" class="menuItem">Все Тесты</a>
           </div>
           <div>
-            <a onclick="CreateTest()" class="menuItem">Создать</a>
-            <a onclick="Profile()" class="menuItem">Профиль</a>
+            <a href="" class="menuItem">Создать</a>
+            <a href="" class="menuItem">Профиль</a>
           </div>
         </div>
       </div>
@@ -196,61 +196,55 @@
   </footer>
 
   <script type="text/javascript">
-    let userNameHTML = document.getElementById("userName")
+    let username = localStorage.getItem("username")
+    let userName = document.getElementById("userName")
+    let isLoged = localStorage.getItem('isLoged')
     let ExitOrLogButton = document.getElementById('ExitOrLog')
     let avatar = document.getElementById('avatar')
     let CreateTestBtn = document.getElementById('CreateTestBtn')
 
-    if (localStorage.getItem('loggedUser') === null) {
-      userNameHTML.style.display = 'none';
-      avatar.style.display = 'none'
-      ExitOrLogButton.innerText = 'Войти'
-
-    } else {
-      let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
-      console.log(loggedUser)
+    if (isLoged === true || isLoged === 'true') {
       userName.style.display = 'block';
       avatar.style.display = 'flex';
-      ExitOrLogButton.innerText = 'Выход'
-      userNameHTML.innerText = loggedUser.userName;
+      userName.innerHTML = username
+    } else {
+      userName.style.display = 'none';
+      avatar.style.display = 'none'
+      ExitOrLogButton.innerText = 'Войти'
     }
 
-
-
     function Profile() {
-      if (localStorage.getItem('loggedUser') === null) {
+      if (isLoged === true || isLoged === 'true') {
+        location.href = 'profile.html'
+      } else {
         alert('Вы не авторизованы!')
         location.href = 'login.html'
-      } else {
-        location.href = 'profile.html'
       }
     }
 
     function ExitOrLog() {
-      if (localStorage.getItem('loggedUser') === null) {
-        location.href = 'login.html'
-
-      } else {
-        localStorage.removeItem('loggedUser')
+      if (isLoged === true || isLoged === 'true') {
+        let isNotLoged = false;
+        localStorage.setItem('isLoged', isNotLoged)
         ExitOrLogButton.innerText = 'Войти'
         location.reload()
+      } else {
+        location.href = 'login.html'
       }
     }
     function CreateTest() {
-      if (localStorage.getItem('loggedUser') === null) {
+      if (isLoged === true || isLoged === 'true') {
+        location.href = 'createtest.html.html'
+      } else {
         alert('Вы не авторизованы!')
         location.href = 'login.html'
-      } else {
-        location.href = 'createtest.html.html'
       }
     }
 
     function createTestsArray() {
       let tests = []
-      let users = []
-      localStorage.setItem('users', JSON.stringify(users))
       localStorage.setItem('testsArray', JSON.stringify(tests))
-      console.log('CREATED')
+      console.log('crewates')
     }
   </script>
 

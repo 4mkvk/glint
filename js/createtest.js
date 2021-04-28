@@ -1,4 +1,6 @@
 let tests = JSON.parse(localStorage.getItem("testsArray"))
+let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+console.log(loggedUser)
 console.log(tests)
 
 $("#question").hide();
@@ -157,6 +159,7 @@ let createTestBtn = () => {
         }
         else {
             let test = {
+                userId: loggedUser.userId,
                 testName: testName,
                 testCategory: testCategory,
                 questions: [
