@@ -158,7 +158,9 @@ let createTestBtn = () => {
             alert("Отметьте вариант ответа")
         }
         else {
+            let random = Math.floor(Math.random() * 1000) + 1;
             let test = {
+                currentTestId: random,
                 userId: loggedUser.userId,
                 testName: testName,
                 testCategory: testCategory,
