@@ -9,6 +9,7 @@ for (i = 0; i < tests.length; i++) {
 }
 
 console.log(currentTest)
+console.log(tests)
 
 $("#question").hide();
 let isOpen = false;
@@ -287,10 +288,10 @@ let createTestBtn = () => {
             alert("Отметьте вариант ответа")
         }
         else {
-            let random = Math.floor(Math.random() * 1000) + 1;
+            // let random = Math.floor(Math.random() * 1000) + 1;
             let test = {
-                currentTestId: random,
-                userId: loggedUser.userId,
+                currentTestId: currentTest['currentTestId'],
+                userId: currentTest['userId'],
                 testName: testName,
                 testCategory: testCategory,
                 questions: [
@@ -441,6 +442,12 @@ let createTestBtn = () => {
 
             // присваивание правильных ответов 
 
+            for(i=0;i<tests.length;i++){
+                if(currentTest['currentTestId'] === tests[i]['currentTestId']){
+                    tests.splice(i,1)
+                }
+            }
+
             tests.push(test)
             localStorage.setItem('testsArray', JSON.stringify(tests))
             location.reload()
@@ -450,7 +457,4 @@ let createTestBtn = () => {
 }
 
 
-function showArray() {
-    console.log(JSON.stringify(tests))
-    JSON.parse(tests)
-}
+
