@@ -1,8 +1,5 @@
 let tests = JSON.parse(localStorage.getItem("testsArray"))
 let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
-if(loggedUser === null){
-    location.href = 'index.html'
-}
 console.log(loggedUser)
 console.log(tests)
 

@@ -305,9 +305,6 @@ body{
     padding: 5px 10px;
     font-size: 24px;
 }
-.userName:hover{
-    cursor: pointer;
-}
 /* footer  */
 .footer{
     margin: 0;

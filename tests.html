@@ -30,13 +30,12 @@
         </div>
 
         <div class="userBLock">
-            <span id="userName" class="userName" onclick="Profile()"></span>
+            <span id="userName" class="userName"></span>
             <div class="avatarBlock" id="avatar">
                 <img src="./img/Avatar.png" alt="" class="avatar">
             </div>
         </div>
     </header>
-
 
 
     <div class="tests">
@@ -45,13 +44,12 @@
         </div>
         <div class="testsBody">
             <div class="testsFilterBlock">
-                <select name="category" id="category" class="categoryFilter">
-                    <option value="Все">Все</option>
-                    <option value="Политика">Политика</option>
-                    <option value="История">История</option>
-                    <option value="Другое">Другое</option>
+                <select name="category" id="category" class="categoryFilter" onchange="changesCategory()">
+                    <option value="Psychology">Psychology</option>
+                    <option value="History">History</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Other">Other</option>
                 </select>
-                <button class="categoryFilter" onclick="changesCategory()">Применить</button>
             </div>
 
             <div id="testsBlock">
@@ -65,7 +63,7 @@
                             <span class="testCardSpan">10 вопросов</span>
                         </div>
                         <div class="testCardDownBlock">
-                            <button class="testCardTakeTest">Пройти</button>
+                            <button class="testCardTakeTest"  >Пройти</button>
                             <span class="testCardSpan namesurname">От Имя Пользователя</span>
                         </div>
                     </div>
@@ -125,7 +123,7 @@
             </div>
 
             <div class="testsFooter">
-                <a class="linkButton" onclick="CreateTest()">Создать свой тест</a>
+                <a href="" class="linkButton">Создать свой тест</a>
             </div>
         </div>
 
@@ -208,6 +206,10 @@
             } else {
                 location.href = 'createtest.html.html'
             }
+        }
+        function openedtest(id) {
+            localStorage.setItem('currentTestId', JSON.stringify(id))
+            location.href = "glint.openedTest.html";
         }
 
         function createTestsArray() {

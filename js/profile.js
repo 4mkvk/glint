@@ -1,25 +1,17 @@
-let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
-if(loggedUser === null){
-    location.href = 'index.html'
-}
-
-let tests = JSON.parse(localStorage.getItem("testsArray"))
 function editing(id) {
     localStorage.setItem('currentTestId', JSON.stringify(id))
     location.href = "editing.html";
 }
-function deleteTest(id){
-    for(i=0;i<tests.length;i++){
-        if(tests[i]['currentTestId'] === id){
-            tests.splice(i,1)
-            localStorage.setItem('testsArray', JSON.stringify(tests))
-            location.reload();
-        }
-    }
+
+function openedtest(id){
+    localStorage.setItem('currentTestId', JSON.stringify(id))
+    location.href = "glint.openedTest.html";
 }
+
 let testsBlock = $("#testsBlock");
 let users = JSON.parse(localStorage.getItem("users"))
-
+let tests = JSON.parse(localStorage.getItem("testsArray"))
+let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
 console.log(tests)
 console.log(users)
 console.log(loggedUser)
@@ -39,9 +31,9 @@ for (let i = 0; i < tests.length; i++) {
                         <div class="testCardDownBlock">
                             <div class="buttons-wrapper">
                                 <button class="testCardTakeTest" onclick="editing(${tests[i].currentTestId})">Редактировать</button>
-                                <button class="testCardTakeTest" onclick="deleteTest(${tests[i].currentTestId})">Удалить</button>
+                                <button class="testCardTakeTest">Удалить</button>
                             </div>
-                            <button class="testCardTakeTest">Пройти</button>
+                            <button class="testCardTakeTest" onclick="openedtest(${tests[i].currentTestId})" >Пройти</button>
                     </div>
             </div>
     </div>

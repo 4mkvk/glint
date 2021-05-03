@@ -1,0 +1,211 @@
+body{
+    background-color:#0A306A;  
+    position:relative;
+}
+#testsbody{
+    width:90%;
+    margin:auto;
+    padding-bottom:5vh;
+   
+}
+.testsHeader{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.title{
+    font-family: 'Gilroy Bold';
+    color: white;
+    font-size: 3em;
+    margin-top: 5vh;
+}
+#sendBtn{
+    padding: 2vh;
+    background-color:rgb(65, 143, 231) ;
+    border-radius: 5vh;
+    font-size: 1.2em;
+    border: 0px solid transparent;
+    color: #64FCD9;
+    font-family: 'RussoOne Regular';
+    text-decoration: none;
+}
+.button{
+    width:12%;
+    margin:auto;
+    margin-bottom: 6vh;
+    
+}
+.footer{
+    margin: 0;
+    height: auto;
+    padding: 4vh 0;
+    padding-left: 5%;
+    padding-right: 5%; 
+    display: flex;
+    justify-content: space-between;
+    background-color: #0A306A;
+    align-items: center;
+    
+}
+#sendBtn:hover{
+    background-color: rgb(255, 255, 255);
+    color: #64FCD9;
+}
+#questionsBlock{
+   
+    width:80%;
+    margin-bottom:10vh;
+    margin:auto;
+   
+}
+.first_questions_block,.second_questions_block{
+    width:80%;
+    flex-direction: column;
+}
+.question_block{
+    margin:2vh;
+    padding: 2.5vh;
+    width:auto;
+    height:auto;
+}
+
+
+.question_info:hover{
+    color: #3affde;
+}
+
+.question_info{
+    font-family: 'Gilroy Bold';
+    color: white;
+    font-size: 2.3em;
+    padding:3vh;
+    margin:0vh;
+    width:100%;
+}
+
+.answer_info{
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Gilroy Bold';
+    padding:1vh;
+    margin-left:50px;
+}
+.answer_info:hover{
+    color: rgb(251, 255, 0);
+}
+input{
+    width:1px;
+    height:1px;
+    position:absolute;
+    left: 20px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);    
+}
+
+input:checked + .radio_style::before{
+    content:"";
+    width: 1.6vh;
+    height: 1.6vh;
+    background-color: rgb(0, 255, 242);
+    border:0.8vh solid rgb(65, 143, 231);
+    position: absolute;
+    border-radius: 100%;
+}
+
+.radio_style{
+    width: 4vh;
+    height: 4vh;
+    position: absolute;
+    border-radius: 100%;
+    
+}
+
+.true_radio{
+    border:0.4vh solid #98FB98;
+}
+.false_radio{
+    border:0.4vh solid #FF4500;
+}
+
+*{
+    box-sizing: border-box;
+}
+.label{
+    margin:1.8vh;
+    position: relative;
+}
+
+    
+@media screen and (max-width:575px){
+    .radio_style{
+        width: 3.4vh;
+        height: 3.4vh;
+        position: absolute;
+        
+    }
+   
+    input:checked + .radio_style::before{
+        content:"";
+        width:1.2vh;
+        height: 1.2vh;
+        background-color: rgb(0, 255, 242);
+        border:0.6vh solid rgb(255, 255, 121);
+        position: absolute;
+        border-radius: 100%;
+    }
+    
+    .answer_info{
+        color: white;
+        font-size: 1em;
+        padding:2vh;
+        margin-left:4vh;
+    }
+    .question_info{
+        color: white;
+        font-size: 1.2em;
+        margin:1vh;
+        padding:1vh;
+        width:auto;
+    }
+
+    .title{
+        font-family: 'Gilroy Bold';
+        color: white;
+        font-size: 2em;
+        margin-top: 5vh;
+    }
+    .question_block{
+        margin:0px;
+       padding:1.5vh;
+        width:auto;
+        height:auto;
+    }
+
+    #sendBtn{
+        padding: 1.5vh;
+        background-color:white ;
+        border-radius: 5vh;
+        font-size: 1em;
+        
+    }
+    .button{
+        margin:auto;
+        width:20%;
+        margin-bottom:5vh;
+        
+    }
+    #questionsBlock{
+        width:100%;
+        margin-bottom:5vh;
+        padding:2vh;
+    }
+    .first_questions_block,.second_questions_block{
+        width:100%;
+       
+    }
+    #testsbody{
+        width:100%;
+        padding-bottom:0vh;
+       
+    }
+}

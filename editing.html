@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Редактирование теста - GLINT.kz</title>
+  <title>Создание теста - GLINT.kz</title>
   <link rel="icon" type="image/png" href="./img/favicon.png" />
 </head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -28,165 +28,145 @@
     </div>
 
     <div class="userBLock">
-      <span id="userName" class="userName" onclick="Profile()"></span>
+      <span id="userName" class="userName"></span>
       <div class="avatarBlock" id="avatar">
         <img src="./img/Avatar.png" alt="" class="avatar">
       </div>
     </div>
   </header>
 
-
-  <div class="wrapper-one">
-    <div id="questions">
-      <input type="text" placeholder="Название вашего теста" id="title">
-      <hr>
-      <input type="text" placeholder="Краткое описание теста" id="description">
-      <hr>
-      <div style="display: flex; flex-direction: column; width:fit-content;">
-        <select name="" id="theme">
-          <option value="Политика">Политика</option>
-          <option value="История">История</option>
-          <option value="Другое">Другое</option>
-        </select>
-        <button id="startBtn">Приступить к редактированию вопросов</button>
-      </div>
-    </div>
-    <div class="image-wrapper">
-      <img src="./img/Group 14.png" alt="">
+  <div id="questions">
+    <input type="text" placeholder="Название вашего теста" id="title">
+    <hr>
+    <input type="text" placeholder="Краткое описание теста" id="description">
+    <hr>
+    <div style="display: flex; flex-direction: column; width:fit-content;">
+      <select name="" id="theme">
+        <option value="Политика">Политика</option>
+        <option value="История">История</option>
+        <option value="Другое">Другое</option>
+      </select>
+      <button id="startBtn">Приступить к созданию вопросов</button>
     </div>
   </div>
   <div id="question">
-    <div class="wrapper-one">
-      <div class="wrapper">
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №1" id="question1text"></div>
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question1Variant1"> <input type="radio" name="correct1"
-              id="correct1">
-            <input type="text" placeholder="Вариант 2" id="question1Variant2"> <input type="radio" name="correct1"
-              id="correct1">
-          </div>
-        </div>
-
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №2" id="question2text"></div>
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question2Variant1"> <input type="radio" name="correct2"
-              id="correct2">
-            <input type="text" placeholder="Вариант 2" id="question2Variant2"> <input type="radio" name="correct2"
-              id="correct2">
-          </div>
-        </div>
-
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №3" id="question3text"></div>
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question3Variant1"> <input type="radio" name="correct3"
-              id="correct3">
-            <input type="text" placeholder="Вариант 2" id="question3Variant2"> <input type="radio" name="correct3"
-              id="correct3">
-          </div>
-        </div>
-
-
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №4" id="question4text"></div>
-
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question4Variant1"> <input type="radio" name="correct4"
-              id="correct4">
-
-            <input type="text" placeholder="Вариант 2" id="question4Variant2"> <input type="radio" name="correct4"
-              id="correct4">
-          </div>
-        </div>
-
-
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №5" id="question5text"></div>
-
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question5Variant1"> <input type="radio" name="correct5"
-              id="correct5">
-
-            <input type="text" placeholder="Вариант 2" id="question5Variant2"> <input type="radio" name="correct5"
-              id="correct5">
-          </div>
-        </div>
-      </div>
-      <div class="image-wrapper first">
-        <img src="./img/Unsubscribe (1).png" alt="">
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №1" id="question1text"></div>
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question1Variant1"> <input type="radio" name="correct1"
+          id="correct1" value="1">
+        <input type="text" placeholder="Вариант 2" id="question1Variant2"> <input type="radio" name="correct1"
+          id="correct1" value="2">
       </div>
     </div>
 
-    <div class="wrapper-one">
-      <div class="wrapper">
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №6" id="question6text"></div>
-
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question6Variant1"> <input type="radio" name="correct6"
-              id="correct6">
-
-            <input type="text" placeholder="Вариант 2" id="question6Variant2"> <input type="radio" name="correct6"
-              id="correct6">
-          </div>
-        </div>
-
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №7" id="question7text"></div>
-
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question7Variant1"> <input type="radio" name="correct7"
-              id="correct7">
-
-            <input type="text" placeholder="Вариант 2" id="question7Variant2"> <input type="radio" name="correct7"
-              id="correct7">
-          </div>
-        </div>
-
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №8" id="question8text"></div>
-
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question8Variant1"> <input type="radio" name="correct8"
-              id="correct8">
-
-            <input type="text" placeholder="Вариант 2" id="question8Variant2"> <input type="radio" name="correct8"
-              id="correct8">
-          </div>
-        </div>
-
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №9" id="question9text"></div>
-
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question9Variant1"> <input type="radio" name="correct9"
-              id="correct9">
-
-            <input type="text" placeholder="Вариант 2" id="question9Variant2"> <input type="radio" name="correct9"
-              id="correct9">
-          </div>
-        </div>
-
-        <div class="question-wrapper">
-          <div class="question-block"><input type="text" placeholder="Вопрос №10" id="question10text"></div>
-
-          <div class="variants-wrapper">
-            <input type="text" placeholder="Вариант 1" id="question10Variant1"> <input type="radio" name="correct10"
-              id="correct10">
-
-            <input type="text" placeholder="Вариант 2" id="question10Variant2"> <input type="radio" name="correct10"
-              id="correct10">
-          </div>
-        </div>
-      </div>
-      <div class="image-wrapper">
-        <img src="./img/Bored.png" alt="">
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №2" id="question2text"></div>
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question2Variant1"> <input type="radio" name="correct2"
+          id="correct2">
+        <input type="text" placeholder="Вариант 2" id="question2Variant2"> <input type="radio" name="correct2"
+          id="correct2">
       </div>
     </div>
 
-    <button id="createTestBtn" onclick="createTestBtn()">Сохранить тест</button>
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №3" id="question3text"></div>
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question3Variant1"> <input type="radio" name="correct3"
+          id="correct3">
+        <input type="text" placeholder="Вариант 2" id="question3Variant2"> <input type="radio" name="correct3"
+          id="correct3">
+      </div>
+    </div>
+
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №4" id="question4text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question4Variant1"> <input type="radio" name="correct4"
+          id="correct4">
+
+        <input type="text" placeholder="Вариант 2" id="question4Variant2"> <input type="radio" name="correct4"
+          id="correct4">
+      </div>
+    </div>
+
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №5" id="question5text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question5Variant1"> <input type="radio" name="correct5"
+          id="correct5">
+
+        <input type="text" placeholder="Вариант 2" id="question5Variant2"> <input type="radio" name="correct5"
+          id="correct5">
+      </div>
+    </div>
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №6" id="question6text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question6Variant1"> <input type="radio" name="correct6"
+          id="correct6">
+
+        <input type="text" placeholder="Вариант 2" id="question6Variant2"> <input type="radio" name="correct6"
+          id="correct6">
+      </div>
+    </div>
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №7" id="question7text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question7Variant1"> <input type="radio" name="correct7"
+          id="correct7">
+
+        <input type="text" placeholder="Вариант 2" id="question7Variant2"> <input type="radio" name="correct7"
+          id="correct7">
+      </div>
+    </div>
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №8" id="question8text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question8Variant1"> <input type="radio" name="correct8"
+          id="correct8">
+
+        <input type="text" placeholder="Вариант 2" id="question8Variant2"> <input type="radio" name="correct8"
+          id="correct8">
+      </div>
+    </div>
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №9" id="question9text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question9Variant1"> <input type="radio" name="correct9"
+          id="correct9">
+
+        <input type="text" placeholder="Вариант 2" id="question9Variant2"> <input type="radio" name="correct9"
+          id="correct9">
+      </div>
+    </div>
+
+    <div class="question-wrapper">
+      <div class="question-block"><input type="text" placeholder="Вопрос №10" id="question10text"></div>
+
+      <div class="variants-wrapper">
+        <input type="text" placeholder="Вариант 1" id="question10Variant1"> <input type="radio" name="correct10"
+          id="correct10">
+
+        <input type="text" placeholder="Вариант 2" id="question10Variant2"> <input type="radio" name="correct10"
+          id="correct10">
+      </div>
+    </div>
+
+    <button id="createTestBtn" onclick="createTestBtn()">Сохранить изменения</button>
   </div>
 
 
