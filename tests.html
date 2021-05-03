@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="./img/favicon.png" />
     <link rel="stylesheet" href="./css/tests.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -44,12 +44,13 @@
         </div>
         <div class="testsBody">
             <div class="testsFilterBlock">
-                <select name="category" id="category" class="categoryFilter" onchange="changesCategory()">
-                    <option value="Psychology">Psychology</option>
-                    <option value="History">History</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Other">Other</option>
+                <select name="category" id="category" class="categoryFilter">
+                    <option value="Все">Все</option>
+                    <option value="Политика">Политика</option>
+                    <option value="История">История</option>
+                    <option value="Другое">Другое</option>
                 </select>
+                <button class="categoryFilter" onclick="changesCategory()">Применить</button>
             </div>
 
             <div id="testsBlock">
@@ -123,7 +124,7 @@
             </div>
 
             <div class="testsFooter">
-                <a href="" class="linkButton">Создать свой тест</a>
+                <a href="" class="linkButton" onclick="CreateTest()">Создать свой тест</a>
             </div>
         </div>
 
