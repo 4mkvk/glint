@@ -1,3 +1,8 @@
+let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+if(loggedUser === null){
+    location.href = 'index.html'
+}
+
 let tests = JSON.parse(localStorage.getItem("testsArray"))
 function editing(id) {
     localStorage.setItem('currentTestId', JSON.stringify(id))
@@ -14,7 +19,7 @@ function deleteTest(id){
 }
 let testsBlock = $("#testsBlock");
 let users = JSON.parse(localStorage.getItem("users"))
-let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+
 console.log(tests)
 console.log(users)
 console.log(loggedUser)
