@@ -30,12 +30,13 @@
         </div>
 
         <div class="userBLock">
-            <span id="userName" class="userName"></span>
+            <span id="userName" class="userName" onclick="Profile()"></span>
             <div class="avatarBlock" id="avatar">
                 <img src="./img/Avatar.png" alt="" class="avatar">
             </div>
         </div>
     </header>
+
 
 
     <div class="tests">
@@ -44,86 +45,22 @@
         </div>
         <div class="testsBody">
             <div class="testsFilterBlock">
-                <select name="category" id="category" class="categoryFilter" onchange="changesCategory()">
-                    <option value="Psychology">Psychology</option>
-                    <option value="History">History</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Other">Other</option>
-                </select>
+                <select name="category" id="category" class="categoryFilter">
+                    <option value="Все">Все</option>
+                    <option value="Политика">Политика</option>
+                    <option value="История">История</option>
+                    <option value="Другок">Другое</option>
+                </select> 
+                <button class="categoryFilter" onclick="changesCategory()">
+                    Применить
+                </button>
             </div>
 
             <div id="testsBlock">
-                <!-- <div class="testCard">
-                    <div class="testCardImageBlock">
-                        <img src="./img/test-card.png" alt="" class="testCardImage">
-                    </div>
-                    <div class="testCardContent">
-                        <div class="testCardTitleBlock">
-                            <span class="testCardTitle">Насколько ты крут?</span>
-                            <span class="testCardSpan">10 вопросов</span>
-                        </div>
-                        <div class="testCardDownBlock">
-                            <button class="testCardTakeTest"  >Пройти</button>
-                            <span class="testCardSpan namesurname">От Имя Пользователя</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="testCard">
-                    <div class="testCardImageBlock">
-                        <img src="./img/test-card.png" alt="" class="testCardImage">
-                    </div>
-                    <div class="testCardContent">
-                        <div class="testCardTitleBlock">
-                            <span class="testCardTitle">Насколько ты крут?</span>
-                            <span class="testCardSpan">10 вопросов</span>
-                        </div>
-                        <div class="testCardDownBlock">
-                            <button class="testCardTakeTest">Пройти</button>
-                            <span class="testCardSpan namesurname">От Имя Пользователя</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="testCard">
-                    <div class="testCardImageBlock">
-                        <img src="./img/test-card.png" alt="" class="testCardImage">
-                    </div>
-                    <div class="testCardContent">
-                        <div class="testCardTitleBlock">
-                            <span class="testCardTitle">Насколько ты крут?</span>
-                            <span class="testCardSpan">10 вопросов</span>
-                        </div>
-                        <div class="testCardDownBlock">
-                            <button class="testCardTakeTest">Пройти</button>
-                            <span class="testCardSpan namesurname">От Имя Пользователя</span>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="testCard">
-                    <div class="testCardImageBlock">
-                        <img src="./img/test-card.png" alt="" class="testCardImage">
-                    </div>
-                    <div class="testCardContent">
-                        <div class="testCardTitleBlock">
-                            <span class="testCardTitle">Насколько ты крут?</span>
-                            <span class="testCardSpan">10 вопросов</span>
-                        </div>
-                        <div class="testCardDownBlock">
-                            <button class="testCardTakeTest">Пройти</button>
-                            <span class="testCardSpan namesurname">От Имя Пользователя</span>
-                        </div>
-                    </div>
-                </div> -->
             </div>
 
             <div class="testsFooter">
-                <a href="" class="linkButton">Создать свой тест</a>
+                <a onclick="CreateTest()" class="linkButton">Создать свой тест</a>
             </div>
         </div>
 
@@ -159,6 +96,19 @@
     </footer>
 
     <script type="text/javascript">
+        var header = $('.header'),
+            scrollPrev = 0;
+
+        $(window).scroll(function () {
+            var scrolled = $(window).scrollTop();
+
+            if (scrolled > 100 && scrolled > scrollPrev) {
+                header.addClass('out');
+            } else {
+                header.removeClass('out');
+            }
+            scrollPrev = scrolled;
+        });
         let userNameHTML = document.getElementById("userName")
         let ExitOrLogButton = document.getElementById('ExitOrLog')
         let avatar = document.getElementById('avatar')

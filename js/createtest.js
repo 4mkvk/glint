@@ -2,6 +2,9 @@ let tests = JSON.parse(localStorage.getItem("testsArray"))
 let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
 console.log(loggedUser)
 console.log(tests)
+if (localStorage.getItem('loggedUser') === null) {
+    location.href = 'login.html'
+}
 
 $("#question").hide();
 let isOpen = false;
@@ -164,6 +167,7 @@ let createTestBtn = () => {
                 userId: loggedUser.userId,
                 testName: testName,
                 testCategory: testCategory,
+                passCount: 0,
                 questions: [
                     {
                         questionTitle: question1.value,

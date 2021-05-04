@@ -3,8 +3,9 @@
     src: url("../fonts/RussoOne/RussoOne-Regular.ttf") format("truetype");
 }
 body{
-    background-color: #9BC5D2;
+    background-color: #0A306A;
     font-family: "RussoOne Regular";
+    
 }
 
 ::placeholder{
@@ -12,9 +13,14 @@ body{
 }
 
 #title{
-    width: 400px;
-    height:50px;
     border-radius: 20px;
+    color: white;
+    font-size: 32px;
+}
+.questionQuestion{
+    font-size: 12px;
+    color: thistle;
+    margin-right: 5px;
 }
 input{
     outline: none;
@@ -48,6 +54,7 @@ input{
 .question-wrapper{
     display: flex;
     flex-direction: column;
+    padding-left: 10%;
 }
 .variants-wrapper{
     display: flex;   
@@ -56,6 +63,8 @@ input{
 .question-block{
     display: flex;
     margin: 10px 0;
+    color: white;
+    flex-direction: column;
 }
 .question-block input{
     width: 450px;
@@ -68,26 +77,40 @@ input{
     border-radius: 20px;
 }
 .variants-wrapper input:disabled{
-    width: 150px;
+    width: 200px;
     height: 30px;
     border-radius: 20px;
     background-color: white;
     color: black;
 }
-#questions,#question{
+#question{
     margin: 10px 20px;
 }
 #correct1,#correct2,#correct3,#correct4,#correct5,#correct6,#correct7,#correct8,#correct9,#correct10{
     width: 20px;
 }
+input[type=radio]:hover{
+    border: 10px solid yellow;
+}
+.questionInnerText{
+    font-size: 24px;
+    color: white;
+}
 #createTestBtn{
     margin: 15px 0;
+    margin-left: 10%;
     width: 350px;
     height: 50px;
     font-family: 'RussoOne Regular';
-    border: none;
+    border: 3px rgba(255, 255, 255, 0) solid;
     border-radius: 15px;
     cursor: pointer;
+    transition: 0.3s;
+}
+#createTestBtn:hover{
+    background-color: #0A306A;
+    border: 3px white solid;
+    color: white;
 }
 
 .wrapper-one{
@@ -102,4 +125,24 @@ input{
 }
 .image-wrapper{
     margin: 10px 0;
+}
+#questions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.message{
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+.message.msBlock{
+    display: block;
+}
+#resultOfTest{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
 }

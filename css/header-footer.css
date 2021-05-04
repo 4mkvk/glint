@@ -258,6 +258,13 @@ body{
     justify-content: space-between;
     background-color: #0A306A;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000000;
+    transition: all .3s ease;
+}
+.header.out {
+	transform: translateY(-100%);
 }
 .logo{
     font-family: "Gilroy Bold";
@@ -305,6 +312,9 @@ body{
     padding: 5px 10px;
     font-size: 24px;
 }
+.userName:hover{
+    cursor: pointer;
+}
 /* footer  */
 .footer{
     margin: 0;
@@ -320,9 +330,6 @@ body{
 .footerLeft{
     display: flex;
     align-items: center;
-}
-.logo{
-    font-size: 72px;
 }
 
 @media screen and (max-width:575px){

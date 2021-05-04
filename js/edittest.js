@@ -7,8 +7,13 @@ for (i = 0; i < tests.length; i++) {
         currentTest = tests[i]
     }
 }
+if (localStorage.getItem('loggedUser') === null) {
+    location.href = 'login.html'
+}
+document.title = `${currentTest.testName} | Редактирование - GLINT.kz`
 
 console.log(currentTest)
+console.log(tests)
 
 $("#question").hide();
 let isOpen = false;
@@ -287,15 +292,15 @@ let createTestBtn = () => {
             alert("Отметьте вариант ответа")
         }
         else {
-            let random = Math.floor(Math.random() * 1000) + 1;
             let test = {
-                currentTestId: random,
-                userId: loggedUser.userId,
+                currentTestId: currentTest['currentTestId'],
+                userId: currentTest['userId'],
                 testName: testName,
                 testCategory: testCategory,
+                passCount: currentTest['passCount'],
                 questions: [
                     {
-                        questionTitle: question1,
+                        questionTitle: question1.value,
                         questionAnswers: [
                             question1Variant1,
                             question1Variant2,
@@ -303,7 +308,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question2,
+                        questionTitle: question2.value,
                         questionAnswers: [
                             question2Variant1,
                             question2Variant2,
@@ -311,7 +316,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question3,
+                        questionTitle: question3.value,
                         questionAnswers: [
                             question3Variant1,
                             question3Variant2,
@@ -319,7 +324,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question4,
+                        questionTitle: question4.value,
                         questionAnswers: [
                             question4Variant1,
                             question4Variant2,
@@ -327,7 +332,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question5,
+                        questionTitle: question5.value,
                         questionAnswers: [
                             question5Variant1,
                             question5Variant2,
@@ -335,7 +340,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question6,
+                        questionTitle: question6.value,
                         questionAnswers: [
                             question6Variant1,
                             question6Variant2,
@@ -343,7 +348,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question7,
+                        questionTitle: question7.value,
                         questionAnswers: [
                             question7Variant1,
                             question7Variant2,
@@ -351,7 +356,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question8,
+                        questionTitle: question8.value,
                         questionAnswers: [
                             question8Variant1,
                             question8Variant2,
@@ -359,7 +364,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question9,
+                        questionTitle: question9.value,
                         questionAnswers: [
                             question9Variant1,
                             question9Variant2,
@@ -367,7 +372,7 @@ let createTestBtn = () => {
                         correctAnswersIndex: 0
                     },
                     {
-                        questionTitle: question10,
+                        questionTitle: question10.value,
                         questionAnswers: [
                             question10Variant1,
                             question10Variant2,
@@ -441,9 +446,14 @@ let createTestBtn = () => {
 
             // присваивание правильных ответов 
 
-            tests.push(test)
-            localStorage.setItem('testsArray', JSON.stringify(tests))
-            location.reload()
+            for (i = 0; i < tests.length; i++) {
+                if (tests[i]['currentTestId'] === currentTestId) {
+                    tests.splice(i, 1)
+                    tests.push(test)
+                    localStorage.setItem('testsArray', JSON.stringify(tests))
+                    location.reload()
+                }
+            }
         }
     }
 

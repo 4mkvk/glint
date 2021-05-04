@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header-footer.css">
     <!-- styles  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,12 +34,13 @@
         </div>
 
         <div class="userBLock">
-            <span id="userName" class="userName"></span>
+            <span id="userName" class="userName" onclick="Profile()"></span>
             <div class="avatarBlock" id="avatar">
                 <img src="./img/Avatar.png" alt="" class="avatar">
             </div>
         </div>
     </header>
+
     <!-- Header end -->
 
     <button onclick="createTestsArray()" style="position: fixed; right: 10px; bottom: 10px; z-index: 99999;">Создать
@@ -87,6 +90,20 @@
     <script src="./js/main.js"></script>
 
     <script type="text/javascript">
+        var header = $('.header'),
+            scrollPrev = 0;
+
+        $(window).scroll(function () {
+            var scrolled = $(window).scrollTop();
+
+            if (scrolled > 100 && scrolled > scrollPrev) {
+                header.addClass('out');
+            } else {
+                header.removeClass('out');
+            }
+            scrollPrev = scrolled;
+        });
+
         let userNameHTML = document.getElementById("userName")
         let ExitOrLogButton = document.getElementById('ExitOrLog')
         let avatar = document.getElementById('avatar')

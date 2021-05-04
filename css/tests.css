@@ -427,3 +427,6 @@
     margin-left: 30px;
 }
 }
+.categoryFilter:hover{
+    cursor: pointer;
+}
